@@ -1,0 +1,34 @@
+@import "styles/mixins";
+
+.filter{
+  @include card;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo base del botón */
+.reset-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo cuando el mouse está sobre el botón */
+.reset-button:hover {
+  background-color: white;
+  color: black,
+}
+
+/* Estilo cuando se hace clic en el botón */
+.reset-button:active {
+  background-color: #1f6690;
+}
+
+
+

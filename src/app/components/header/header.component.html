@@ -1,0 +1,44 @@
+
+<!-- para ocultar el header uso ngClass-->
+<div class="header">
+
+  <div class="header__title">
+    <div>
+      <a class="app-a" routerLinkActive="app-a_active" >
+        <span class="material-icons md-36 estiloIcon" (click)="onClicked()">lists</span>
+      </a>
+    </div>
+
+
+      <div class="app-a" >
+        <img routerLink="shop" src="/assets/images/logo-actualizado.svg" alt="Logo" width="80" height="60">
+      </div>
+
+      <span routerLink="shop">Shornel Store</span>
+
+  </div>
+
+  <div class="header__navigation" fxHide.xs fxHide.sm>
+      <a class="app-a" routerLink="shop" routerLinkActive="app-a_active" >Tienda</a>
+      <a class="app-a" routerLink="static/welcome" routerLinkActive="app-a_active">Nosotros</a>
+      <a class="app-a" routerLink="contacto" routerLinkActive="app-a_active">Contacto</a>
+
+  </div>
+
+
+  <div class="header__buttons" >
+    <a class="app-a" routerLink="carrito-compras" routerLinkActive="app-a_active" >
+      <span class="material-icons md-36" estiloIcon>shopping_cart</span>
+    </a>
+
+
+      <button class="reset-button" *ngIf="!isAuthorized" routerLink="auth/login" fxHide.xs fxHide.sm>Iniciar sesión</button>
+
+    <button class="reset-button" *ngIf="!isAuthorized" routerLink="auth/register" fxHide.xs fxHide.sm>Registrase</button>
+
+    <span class="nombre-user" *ngIf="isAuthorized" fxHide.xs fxHide.sm> {{user ? user.nombres + ' ' +  user.apellidos : null }}</span>
+
+    <a  class="app-a text-red"  *ngIf="isAuthorized" (click)="onSignOut()" routerLinkActive="app-a_active" fxHide.xs fxHide.sm>Cerrar sesión</a>
+  </div>
+
+</div>

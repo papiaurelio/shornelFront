@@ -1,0 +1,36 @@
+.form{
+  display: flex;
+
+  &__textfield{
+    display: inline-flex;
+  }
+
+  &__actions{
+    display: inline-flex;
+  }
+}
+
+
+.bg-blanco{
+  background: white;
+  border-radius: 20px;
+}
+
+.container-form{
+  padding-top: 4px;
+}
+
+.hola{
+  width: 450px;
+}
+
+
+@media screen and (max-width: 651px) {
+  .hola{
+    width: 100%;
+  }
+}
+
+
+
+

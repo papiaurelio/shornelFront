@@ -1,0 +1,86 @@
+## Angular specific files
+.angular/
+.angular-cache/
+
+## Compiled output
+/dist/
+/out-tsc/
+/tmp/
+
+## IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+## System files
+.DS_Store
+Thumbs.db
+
+## Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Dependency directories
+node_modules/
+
+## Environment files
+.env
+.env.*
+src/environments/environment*.ts
+
+## Firebase
+.firebase/
+.firebaserc
+.firebasecache
+
+## Angular build files
+*.log
+*.lock
+*.bak
+*.tmp
+*.old
+
+## Angular configuration files
+*.json
+!angular.json
+!package.json
+!tsconfig.json
+
+## Generated files
+*.js
+*.js.map
+*.d.ts
+
+## Coverage reports
+coverage/
+
+## Test outputs
+*.spec.ts
+*.e2e-spec.ts
+
+## Miscellaneous
+.sass-cache/
+.connect.lock
+npm-debug.log
+.npmrc
+
+## Optional npm cache
+.npm
+
+## Optional log file
+*.log
+
+## Optional OS files
+*.swp
+*.bak
+*.tmp
+*.seed
+*.old
+
+## GitHub Workflows
+.github/workflows/*

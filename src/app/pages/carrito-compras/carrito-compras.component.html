@@ -1,0 +1,79 @@
+<div class="contenedorP">
+  <p *ngIf="!(isAuthorized$ | async)" class="message-2">Tienes que inicar sesión para agregar productos al carrito</p>
+
+  <p class="message" *ngIf="carritoCompra && carritoCompra.items && carritoCompra.items.length === 0 && (isAuthorized$ | async)">
+    El carrito está vacío...
+</p>
+
+
+  <div class="centrar-btn">
+    <button class="reset-button" *ngIf="!(isAuthorized$ | async)" routerLink="/auth/login" fxHide.xs fxHide.sm>Iniciar sesión</button>
+  </div>
+  <div class="cart-containerDETALLES" >
+      <!-- Aquí van los elementos del carrito -->
+
+      <div class="summary-container" *ngIf="carritoCompra && carritoCompra.items && carritoCompra.items.length > 0">
+          <h2 class="Titulo-detalles">Resumen</h2>
+          <div class="summary-details">
+              <div class="summary-row">
+                  <span>Subtotal:</span>
+                  <span class="subtotal-price">${{subtotalPrice}}</span>
+              </div>
+              <div class="summary-row">
+                  <span>Impuesto:</span>
+                  <span class="tax-price">${{impuestos.toFixed(2)}}</span>
+              </div>
+              <div class="summary-row">
+                  <span>Total:</span>
+                  <span class="total-price">${{totalPrice.toFixed(2)}}</span>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="cart-container" *ngIf="carritoCompra && carritoCompra.items && carritoCompra.items.length > 0">
+
+      <div class="item" *ngFor="let item of carritoCompra?.items">
+          <div class="item-image">
+              <img src="{{item.imagen}}">
+          </div>
+          <div class="item-details">
+              <div class="item-name">{{item.nombreProducto}}</div>
+              <div class="item-description"><p>Regala entretenimiento ilimitado con nuestra giftcard de juego. Accede a distintos juegos con solo un clic. El regalo perfecto para cualquier amante de las peliculas</p></div>
+              <div class="item-price">${{item.precio}}</div>
+              <div class="item-quantity">
+                  <label for="quantity-1">Cantidad:</label>
+                  <input type="number" id="quantity-1" name="quantity-1" min="1" value="{{item.cantidad}}">
+              </div>
+              <button class="remove-button">Eliminar</button>
+          </div>
+      </div>
+
+      <div class="total">
+        <span>Total:</span>
+        <span class="total-price">${{totalPrice.toFixed(2)}}</span>
+      </div>
+  </div>
+
+  <div class="centrar-btn">
+
+    <button class="reset-button bg-red" *ngIf="carritoCompra && carritoCompra.items && carritoCompra.items.length !== 0 && (isAuthorized$ | async)" (click)="deteteCarrito()">Vaciar carrito</button>
+
+    <button class="reset-button bg-verde" *ngIf="carritoCompra && carritoCompra.items && carritoCompra.items.length !== 0 && (isAuthorized$ | async)" (click)="realizarCompra()">Realizar compra.</button>
+
+  </div>
+
+</div>
+<app-loading-shornel *ngIf="loading"></app-loading-shornel>
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+

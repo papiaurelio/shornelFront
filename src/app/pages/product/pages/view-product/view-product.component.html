@@ -1,0 +1,36 @@
+<div class="container-principal">
+
+  <div class="product-container">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="{{producto.photoURL}}" alt="{{producto.nombre}}">
+      </div>
+      <div class="product-info">
+        <h2 class="product-name">{{producto.nombre}}</h2>
+        <p class="product-description">{{producto.descripcion}}</p>
+        <div class="product-details">
+          <span class="product-price">${{producto.precio}}</span>
+          <span class="product-stock">DISPONIBLE</span>
+        </div>
+        <div class="quantity-input">
+          <label for="quantity">Cantidad:</label>
+          <input type="number" id="quantity" name="quantity" [(ngModel)]="cantidad">
+        </div>
+        <button class="add-to-cart-btn" (click)="onClickAgregarCarrito()">Agregar al carrito</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="seccion-recomandados">
+    <h2>Productos recomendados</h2>
+  </div>
+
+  <div class="productos">
+    <app-products [user]="user$ | async" *ngIf="pagination$ | async as pagination" [products]="pagination.data"></app-products>
+  </div>
+
+  <app-loading-shornel *ngIf="loading$ | async"></app-loading-shornel>
+
+</div>

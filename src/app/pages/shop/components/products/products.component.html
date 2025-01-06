@@ -1,0 +1,21 @@
+
+
+<div class="container-p">
+  <p class="message" *ngIf="products.length == 0">No se encontraron resultados...</p>
+    <div *ngFor="let product of products">
+      <figure class="card">
+        <img src="{{product.imagen}}" alt="{{product.nombre}}">
+        <figcaption>
+            <h3>{{product.nombre}}</h3>
+            <p>{{product.categoriaNombre}}</p>
+            {{product.descripcion}}
+
+            <div class="btn-flex">
+
+            </div>
+            <button class="boton-blanco" routerLink="/producto/info/{{product.id}}" >Ver más</button>
+            <button  *ngIf="user?.administrador == true" class="boton-blanco" routerLink="/producto/actualizar/{{product.id}}">EDITAR</button>
+        </figcaption>
+    </figure>
+    </div>
+</div>

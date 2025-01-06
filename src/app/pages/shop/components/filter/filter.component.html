@@ -1,0 +1,35 @@
+<form [formGroup]="form" novalidate autocomplete="off">
+
+  <div class="filter">
+    <button class="reset-button" (click)="reinicarFiltros()">Reiniciar filtros</button>
+  </div>
+
+  <div class="filter">
+    <app-form-field label="Ordenar por:" [control]="form.controls.sort" [isInline]="false">
+      <app-select formControlName="sort" [items]="controls.sort.items ? controls.sort.items : []"
+      (changed)="controls.sort.changed ? controls.sort.changed() : null">
+      </app-select>
+    </app-form-field>
+  </div>
+
+  <div class="filter">
+    <b>Selecciona una marca</b>
+    <mat-selection-list formControlName="marca" [multiple]="false" (selectionChange)="onMarcasSelectionChange($event)" >
+        <mat-list-option *ngFor="let item of marca" [value]="item.value">
+          <mat-list-item>{{item.label}}</mat-list-item>
+        </mat-list-option>
+    </mat-selection-list>
+  </div>
+
+
+  <div class="filter">
+    <b>Selecciona una Categoria</b>
+    <mat-selection-list formControlName="categoria" [multiple]="false" (selectionChange)="onCategoriasSelectionChange($event)">
+        <mat-list-option *ngFor="let item of categoria" [value]="item.value">
+            {{item.label}}
+        </mat-list-option>
+    </mat-selection-list>
+
+  </div>
+
+</form>

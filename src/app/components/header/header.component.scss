@@ -1,0 +1,113 @@
+@import "styles/colors";
+.header{
+  height: 100px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 3 px rgba(0,0,0,0);
+  font-size: 1.2en;
+
+  &__title{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  &__navigation{
+    display: inline-flex;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 1.2em;
+  }
+
+  &__buttons{
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.material-icons.md-18{
+  font-size: 18px;
+}
+
+.material-icons.md-24{
+  font-size: 24px;
+}
+
+.material-icons.md-36{
+  font-size: 36px;
+  margin: 0 13px;
+  color: black;
+}
+
+.material-icons.md-48{
+  font-size: 48px;
+}
+
+.estiloIcon{
+  cursor: pointer;
+  margin-right: 15px;
+  color: black;
+}
+
+.estiloIcon:hover{
+  color:brown;
+}
+
+.app-a{
+  margin-left: 1em;
+  margin-right: 0;
+}
+
+.header__navigation a{
+  margin-left: 50px;
+}
+
+
+.hidden-header{
+  display: none;
+}
+
+.reset-button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo cuando el mouse está sobre el botón */
+.reset-button:hover {
+  background-color: white;
+  color: black,
+}
+
+/* Estilo cuando se hace clic en el botón */
+.reset-button:active {
+  background-color: #1f6690;
+}
+
+.nombre-user{
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+.text-red{
+  color: red;
+}
+
+@media screen and (max-width: 651px) {
+  .app-a{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+
+

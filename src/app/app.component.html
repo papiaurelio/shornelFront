@@ -1,0 +1,23 @@
+
+<mat-sidenav-container>
+  <mat-sidenav #menu role="navigation">
+    <app-menu-list (menuToggle)="menu.close()" [isAuthorized]="isAuthorized$ | async"
+    [user]="user$ | async" (signOut)="onSignOut()"></app-menu-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header *ngIf="showHeader" (signOut)="onSignOut()" (menuCliked)="menu.toggle()" [isAuthorized]="isAuthorized$ | async"
+    [user]="user$ | async" ></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+

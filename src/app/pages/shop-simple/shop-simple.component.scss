@@ -1,0 +1,36 @@
+.container-buscar{
+  text-align: center;
+  margin: 10px;
+}
+
+.container-central{
+  padding: 50px;
+}
+
+.reset-button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo cuando el mouse está sobre el botón */
+.reset-button:hover {
+  background-color: white;
+  color: black,
+}
+
+.btn-avanzada{
+  text-align: center;
+}
+
+.bg-whiter{
+  background: white;
+}
+
+

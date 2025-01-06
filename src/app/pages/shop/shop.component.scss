@@ -1,0 +1,129 @@
+.container{
+  display: grid;
+  grid-gap: 5px;
+  justify-content: stretch;
+  align-content: stretch;
+  grid-template-columns: 280px 1fr 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "filter pagination buscador"
+                        "filter productos productos";
+}
+
+.container > div{
+  padding: 1em;
+}
+.filter{
+  grid-area: filter;
+}
+
+.buscador{
+  grid-area: buscador;
+  justify-self: end;
+}
+
+.pagination{
+  grid-area: pagination;
+  justify-self: start;
+}
+
+.productos{
+  grid-area: productos;
+}
+
+.boton-menu{
+  display: none;
+}
+
+.reset-button--mostrar{
+  margin: 100px auto;
+}
+
+
+@media screen and (max-width: 650px) {
+  .container{
+    display: grid;
+    grid-gap: 5px;
+    justify-content: stretch;
+    align-content: stretch;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 60px 80px 60px 1fr;
+    grid-template-areas: "buscador"
+                          "mostrarFiltro"
+                         "pagination"
+                          "productos";
+  }
+
+  .filter{
+    display: none;
+  }
+
+}
+
+.filter-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  overflow-y: auto;
+}
+
+.filter-container {
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo cuando el mouse está sobre el botón */
+.reset-button:hover {
+  background-color: white;
+  color: black,
+}
+
+/* Estilo cuando se hace clic en el botón */
+.reset-button:active {
+  background-color: #1f6690;
+}
+
+.reset-button--red{
+  background-color: red;
+  display: block; /* Asegura que el elemento sea un bloque */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.reset-button--mostrar{
+  display: block;
+  margin: 20px auto;
+}
+
+
+@media screen and (min-width: 651px) {
+  .reset-button--mostrar {
+    display: none;
+  }
+}
+
+
+
+
+

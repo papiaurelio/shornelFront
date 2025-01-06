@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="filter">
+      <app-filter *ngIf="dictionaries$ | async as dictionaries" [dictionaries]="dictionaries"></app-filter>
+    </div>
+
+    <div class="pagination">
+      <app-paginator *ngIf="pagination$ | async as pagination" [pagination]="pagination"></app-paginator>
+    </div>
+
+    <div class="mostrarFiltro">
+      <button class="boton-menu reset-button reset-button--mostrar" (click)="toggleFilter()">Mostrar filtros</button>
+    </div>
+    <div class="buscador">
+      <app-search></app-search>
+    </div>
+    <div class="productos">
+      <app-products *ngIf="pagination$ | async as pagination" [products]="pagination.data"
+      [user]="user$ | async"
+      ></app-products>
+
+    </div>
+</div>
+
+<app-loading-shornel *ngIf="loading$ | async"></app-loading-shornel>
+<!-- <app-spinner *ngIf="loading$ | async"></app-spinner> -->
+
+ <!-- Otras secciones -->
+
+
+ <div class="filter-overlay" *ngIf="showFilter">
+   <div class="filter-container ">
+    <button class="boton-menu reset-button reset-button--red" (click)="toggleFilter()">Cerrar filtros</button>
+     <app-filter *ngIf="dictionaries$ | async as dictionaries" [dictionaries]="dictionaries"></app-filter>
+   </div>
+ </div>
+
+<app-footer></app-footer>

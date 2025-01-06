@@ -1,0 +1,10 @@
+<div class="input-field">
+  <input type="text"
+      class="app-input"
+      [value]="value"
+      [attr.disabled]="isDisabled ? true : null"
+      (keyup)="onKeyup($event)"
+      (blur)="onBlur()"
+      required spellcheck="false">
+  <label>{{ placeholder || 'x' }}</label>
+</div>
